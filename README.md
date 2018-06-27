@@ -4,9 +4,9 @@ Generating openstreets-nl raster tiles with Docker!
 
 Related project: [openstreets-nl-tilemill](https://github.com/ingmapping/openstreets-nl-tilemill/).
 
-![demo](https://github.com/ingmapping/openstreets-nl-tilemill/blob/master/demo.gif)
+<img src="https://github.com/ingmapping/openstreets-nl-tilemill/blob/master/demo.gif" width="50">
 
-[View Demo of openstreets-nl basemap](https://tileserver.ingmapping.com/openstreets_nl/demo.html)
+[View demo of openstreets-nl basemap](https://tileserver.ingmapping.com/openstreets_nl/demo.html)
 
 ## Introduction  
 
