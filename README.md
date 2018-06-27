@@ -3,6 +3,7 @@
 Generating openstreets-nl raster tiles with Docker! Related project: [openstreets-nl-tilemill](https://github.com/ingmapping/openstreets-nl-tilemill/).
 
 ![alt text](https://github.com/ingmapping/openstreets-nl-tilemill/blob/master/demo.gif)
+
 [View Demo of openstreets-nl basemap](https://tileserver.ingmapping.com/openstreets_nl/demo.html)
 
 ## Introduction  
@@ -30,15 +31,16 @@ docker pull ingmapping/docker-openstreets-nl
 To run the container, replace 'pwd' by your current working directory (the directory where you want the tiles to be exported) and use the following command:
 
 ```
-docker run -i -t --rm --name docker-openstreets-nl -v 'pwd'/:/data docker-openstreets-nl
+docker run -i -t --rm --name ingmapping/docker-openstreets-nl -v 'pwd'/:/data docker-openstreets-nl
 ```
 
 The above command will generate openstreets-nl tiles for zoomlevel 0 to 16 (it can take a while) in a folder called 'tiles'. If you want to generate openstreets-nl tiles for other zoom levels you can use the environement variables "MIN_ZOOM" and "MAX_ZOOM". For example, for zoom level 3 to 4:
 
 ```
-docker run -i -t --rm --name docker-openstreets-nl -v 'pwd'/:/data -e MIN_ZOOM=3 -e MAX_ZOOM=14 docker-openstreets-nl
+docker run -i -t --rm --name ingmapping/docker-openstreets-nl -v 'pwd'/:/data -e MIN_ZOOM=3 -e MAX_ZOOM=14 docker-openstreets-nl
 ```
-## How to use/view your generated openstreets-nl raster tiles
+
+## How to use/view your generated openstreets-nl tiles
 
 Once that you have your tiles exported in a folder directory structure, you can use/view the generated raster tiles using various JavaScript mapping libraries. For example:
 
