@@ -42,6 +42,17 @@ The above command will generate openstreets-nl tiles for zoomlevel 0 to 16 (it c
 docker run -i -t --rm --name docker-openstreets-nl -v 'pwd'/:/data -e MIN_ZOOM=3 -e MAX_ZOOM=14 docker-openstreets-nl
 ```
 
+How to remove your exported tiles if permission problems: 
+
+If the tiles are created by root inside the Docker container it can cause problems when you want to remove your tiles locally on the host with a non-root user. A solution how to remove the files is to run another docker container:
+
+```
+docker run -it --rm -v 'pwd'/:/mnt:z phusion/baseimage bash 
+cd mnt 
+rm -rf tiles 
+exit
+```
+
 ## How to use/view your generated openstreets-nl tiles
 
 Once that you have your tiles exported in a folder directory structure, you can use/view the generated raster tiles using various JavaScript mapping libraries. For example:
@@ -55,4 +66,3 @@ Once that you have your tiles exported in a folder directory structure, you can 
 	}).addTo(map);
 ```
 [Leaflet JS - demo](https://tileserver.ingmapping.com/openstreets_nl/demo.html).
-
