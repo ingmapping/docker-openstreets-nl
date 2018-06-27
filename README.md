@@ -1,18 +1,17 @@
 # docker-openstreets-nl
 
-Generating openstreets-nl raster tiles with Docker! 
+Generating openstreets-nl raster tiles with Docker! Related project: [openstreets-nl-tilemill](https://github.com/ingmapping/openstreets-nl-tilemill/).
+
+![alt text](https://github.com/ingmapping/openstreets-nl-tilemill/blob/master/demo.gif)
+[View Demo of openstreets-nl basemap](https://tileserver.ingmapping.com/openstreets_nl/demo.html)
 
 ## Introduction  
 
-This project is part of an internship assignment which aimed at creating tiled basemaps for the KNMI geospatial infrastructure. The data and tools used to create the openstreets-nl basemap are open-source. Therefore, this project is reproducible for everyone who wants to create simple basemaps (raster tiled basemaps) from free vector data! This repository contains all the necessary instructions and files to generate openstreets-nl tiles with Mapnik generate_tiles.py script inside a docker container. 
+This project is part of an internship assignment which aimed at creating tiled basemaps for the KNMI geospatial infrastructure. The data and tools used to create the openstreets-nl basemap are open-source. Therefore, this project is reproducible for everyone who wants to create simple basemaps (raster tiled basemaps) from free vector data! This repository contains all the necessary instructions and files to generate openstreets-nl tiles with Mapnik and a generate_tiles.py script inside a docker container. 
 
 The openstreets-nl basemap style was based on the [openstreets-nl-tilemill](https://github.com/ingmapping/openstreets-nl-tilemill/) project were OpenStreetMap/Natural Earth data was used to create custom styled raster tiles with CartoCSS/Tilemill. Instead of using Tilemill to create the tiles, this directory contains instructions to generate customized openstreets-nl tiles with Mapnik generate_tiles.py script inside a docker container. 
 
-![alt text](https://github.com/ingmapping/openstreets-nl-tilemill/blob/master/demo.gif)
-
-[View Demo of openstreets-nl basemap](https://tileserver.ingmapping.com/openstreets_nl/demo.html)
-
-## docker-openstreets-nl set up
+## How to set up docker-openstreets-nl 
 
 Can be built from the Dockerfile:
 
@@ -26,7 +25,7 @@ or pulled from Docker Hub:
 docker pull ingmapping/docker-openstreets-nl
 ```
 
-## docker-openstreets-nl run
+## How to run docker-openstreets-nl 
 
 To run the container, replace 'pwd' by your current working directory (the directory where you want the tiles to be exported) and use the following command:
 
@@ -39,9 +38,9 @@ The above command will generate openstreets-nl tiles for zoomlevel 0 to 16 (it c
 ```
 docker run -i -t --rm --name docker-openstreets-nl -v 'pwd'/:/data -e MIN_ZOOM=3 -e MAX_ZOOM=14 docker-openstreets-nl
 ```
-## Viewing your basemap/raster tiles
+## How to use/view your generated openstreets-nl raster tiles
 
-Once that you have your tiles exported in a folder directory structure, you can view the generated raster tiles using various JavaScript mapping libraries. For example:
+Once that you have your tiles exported in a folder directory structure, you can use/view the generated raster tiles using various JavaScript mapping libraries. For example:
 
 * [Leaflet JS](https://leafletjs.com/) is a lightweight open source JavaScript library for building interactive web maps.
 
