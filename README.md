@@ -1,4 +1,4 @@
-# docker-openstreets-nl
+# Docker openstreets-nl
 
 Generating openstreets-nl raster tiles with Docker! Related project: [openstreets-nl-tilemill](https://github.com/ingmapping/openstreets-nl-tilemill/).
 
