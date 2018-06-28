@@ -7,7 +7,7 @@ RUN apt-get update -y \
 
 # Install dependencies 
 RUN apt-get update -y \
-    && apt-get install -y libboost-all-dev git-core tar unzip wget bzip2 build-essential autoconf libtool libxml2-dev libgeos-dev libgeos++-dev libpq-dev libbz2-dev libproj-dev munin-node munin libprotobuf-c0-dev protobuf-c-compiler libfreetype6-dev libpng12-dev libtiff5-dev libicu-dev libgdal-dev libcairo-dev libcairomm-1.0-dev apache2 apache2-dev libagg-dev liblua5.2-dev ttf-unifont lua5.1 liblua5.1-dev libgeotiff-epsg postgresql-client-9.5
+    && apt-get install -y libboost-all-dev git-core tar unzip wget bzip2 build-essential autoconf libtool libxml2-dev libgeos-dev libgeos++-dev libpq-dev libbz2-dev libproj-dev munin-node munin libprotobuf-c0-dev protobuf-c-compiler libfreetype6-dev libpng12-dev libtiff5-dev libicu-dev libgdal-dev libcairo-dev libcairomm-1.0-dev apache2 apache2-dev libagg-dev liblua5.2-dev ttf-unifont lua5.1 liblua5.1-dev libgeotiff-epsg postgresql-client-9.5 
 
 # Install mapnik library
 RUN apt-get install -y autoconf apache2-dev libtool libxml2-dev libbz2-dev libgeos-dev libgeos++-dev libproj-dev gdal-bin libgdal1-dev libmapnik-dev mapnik-utils python-mapnik
@@ -21,13 +21,6 @@ RUN mkdir ~/src && cd ~/src \
     && unzip openstreets-nl \
     && find ~/src/ \( -type f -iname "*.zip" -o -iname "*.tgz" \) -delete
 
-# Install a suitable version of the “carto” compiler
-RUN apt-get install -y npm nodejs-legacy \
-    && npm install -y -g carto \
-    && cd ~/src/openstreets-nl \
-    && carto -v \
-    && carto project.mml > openstreets-nl.xml
-    
 # Make local directory for exporting tiles    
 RUN mkdir /data
 VOLUME /data
