@@ -34,6 +34,7 @@ RUN chmod a+rx /docker-entrypoint.sh
 
 COPY ./openstreets-nl.xml /root/src/openstreets-nl/openstreets-nl.xml
 COPY ./generate_tiles.py /root/src/openstreets-nl/generate_tiles.py   
+COPY ./index.html /root/src/openstreets-nl/index.html   
 
 ENV MIN_ZOOM=0
 ENV MAX_ZOOM=16
