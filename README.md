@@ -1,6 +1,6 @@
 # Docker openstreets-nl
 
-Generating openstreets-nl raster tiles with Docker! 
+Generating openstreets-nl raster tiles with Mapnik and Docker! 
 
 Related project: [openstreets-nl-tilemill](https://github.com/ingmapping/openstreets-nl-tilemill/).
 
